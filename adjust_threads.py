@@ -21,6 +21,7 @@ SIZE_TAGS = (
     'MajorDia',
     'PitchDia',
     'MinorDia',
+    'TapDrill',
 )
 
 
