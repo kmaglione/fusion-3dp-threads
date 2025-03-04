@@ -4,23 +4,44 @@ by, but in no way derived from, [this project][replicant-3dp-threads].
 
 # Usage
 
-Once installed, each ISO Metric Profile thread size above 2mm will have 9
-additional thread classes, from ±.1mm to ±.9mm, which create threads with the
-given tolerances:
+Once installed, each ISO Metric Profile thread size additional thread classes,
+for tolerances between ±.1mm and ±.9mm, as long as threads with those tolerances
+would actually mesh with an opposing thread with standard tolerances:
 
 ![Thread size selection](screenshots/edit_hole.png)
 
-The ±.1mm threads, for example, will be .1mm larger for internal threads and
-.1mm smaller for external threads. The thickness of the thread helix will be
-exactly the same in all cases; only the inner and outer diameter will change.
-Below, on the left, is an M5 hole with ±.3mm clearance and a screw with standard
-clearance, compared with an M5 hole and screw both with standard clearance on
-the right:
+These tolerances indicate the amount of additional space added between opposing
+surfaces, be they the the opposing thread profiles, or the opposing major/minor
+diameter. You should typically choose a tolerance to match the tolerance of your
+printer. For instance, if you are printing a vertical screw hole and your
+printer has 200 micron horizontal tolerance, you should start with ±.2mm
+tolerance and adjust from there.
 
-<div style="display: flex; justify-content: space-between;">
-<img alt="M5+.3mm" src="screenshots/M5+.3mm.png">
-<img alt="M5" src="screenshots/M5.png">
-</div>
+As an example, below on the left, we have an M5 hole with ±.2mm clearance and a
+screw with standard clearance, compared with an M5 hole and screw both with
+standard clearance on the right:
+
+![M5+.2mm](screenshots/M5+.2mm.png)
+![M5](screenshots/M5.png)
+
+The opposing thread profiles are .2mm further apart, and the major and minor
+diameters are .2mm larger. The pitch diameter, however, is .4mm larger, and the
+additional backlash is approximately .46mm.
+
+Given the 60° angle of ISO metric profile threads, the difference in pitch
+diameter and additional backlash relative to standard tolerance are as follows:
+
+| Tolerance   | Pitch Delta | Backlash |
+| ----------- | ----------- | -------- |
+| `0.1`       | `0.2`       | `0.23`   |
+| `0.2`       | `0.4`       | `0.46`   |
+| `0.3`       | `0.6`       | `0.69`   |
+| `0.4`       | `0.8`       | `0.92`   |
+| `0.5`       | `1.0`       | `1.15`   |
+| `0.6`       | `1.2`       | `1.39`   |
+| `0.7`       | `1.4`       | `1.62`   |
+| `0.8`       | `1.6`       | `1.85`   |
+| `0.9`       | `1.8`       | `2.08`   |
 
 # Installation
 
